@@ -1,0 +1,116 @@
+﻿@model Bio_Data.Models.Familydetails
+@{
+    ViewData["Title"] = "FamilyDetailsCreate";
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="SaveAllData" asp-controller="Biodata" >
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="FatherName">Father Name</label><label>*</label>
+                            <input type="text" asp-for="FatherName" class="form-control" placeholder="Enter Father Name" />
+                            <span asp-validation-for="FatherName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="FatherOccupation">Father Occupation</label><label>*</label>
+                            <input type="text" asp-for="FatherOccupation" class="form-control" placeholder="Enter Father Occupation" />
+                            <span asp-validation-for="FatherOccupation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MotherName">Mother Name</label><label>*</label>
+                            <input type="text" asp-for="MotherName" class="form-control" placeholder="Enter Mother Name" />
+                            <span asp-validation-for="MotherName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MotherOccupation">Mother Occupation</label><label>*</label>
+                            <input type="text" asp-for="MotherOccupation" class="form-control" placeholder="Enter Mother Occupation" />
+                            <span asp-validation-for="MotherOccupation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="ElderBrotherName">Elder Brother Name</label>
+                            <input type="text" asp-for="ElderBrotherName" class="form-control" placeholder="Enter Elder Brother Name" />
+                            <span asp-validation-for="ElderBrotherName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="ElderBrotherOccupation">Elder Brother Occupation</label>
+                            <input type="text" asp-for="ElderBrotherOccupation" class="form-control" placeholder="Enter Elder Brother Occupation" />
+                            <span asp-validation-for="ElderBrotherOccupation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="YoungerBrotherName">Younger Brother Name</label>
+                            <input type="text" asp-for="YoungerBrotherName" class="form-control" placeholder="Enter Younger Brother Name" />
+                            <span asp-validation-for="YoungerBrotherName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="YoungerBrotherOccupation">Younger Brother Occupation</label>
+                            <input type="text" asp-for="YoungerBrotherOccupation" class="form-control" placeholder="Enter Younger Brother Occupation" />
+                            <span asp-validation-for="YoungerBrotherOccupation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="ElderSisterName">Elder Sister Name</label>
+                            <input type="text" asp-for="ElderSisterName" class="form-control" placeholder="Enter Elder Sister Name" />
+                            <span asp-validation-for="ElderSisterName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="ElderSisterOccupation">Elder Sister Occupation</label>
+                            <input type="text" asp-for="ElderSisterOccupation" class="form-control" placeholder="Enter Elder Sister Occupation" />
+                            <span asp-validation-for="ElderSisterOccupation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="YoungerSisterName">Younger Sister Name</label>
+                            <input type="text" asp-for="YoungerSisterName" class="form-control" placeholder="Enter Younger Sister Name" />
+                            <span asp-validation-for="YoungerSisterName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="YoungerSisterOccupation">Younger Sister Occupation</label>
+                            <input type="text" asp-for="YoungerSisterOccupation" class="form-control" placeholder="Enter Younger Sister Occupation" />
+                            <span asp-validation-for="YoungerSisterOccupation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <input type="submit" value="NexT" name="Command" class="btn btn-lg btn-outline-success float-right" />
+                    <a asp-action="PersonalDetailsCreate" class="float-left" data-bs-toggle="collapse" data-bs-target="#collapseOne">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

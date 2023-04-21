@@ -1,0 +1,41 @@
+﻿.header {
+    text-align: center;
+    color: red;
+    padding: 35px 5px;
+}
+
+.header1 {
+    text-align: center;
+    color: royalblue;
+    padding: 20px 0;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    height: 70%;
+}
+
+.table1 {
+   height: 100px;
+}
+
+
+td, th {
+    border: 1px solid gray;
+    padding: 15px;
+    font-size: 22px;
+    text-align: center;
+}
+
+table th {
+    background-color: green;
+    color: white;
+    
+}
+
+.borderimg2 {
+    border: 30px solid transparent;
+    border-image: url('C:\Users\vivek\source\repos\Bio-Data\Bio-Data\border.png') 30 round;
+}
+

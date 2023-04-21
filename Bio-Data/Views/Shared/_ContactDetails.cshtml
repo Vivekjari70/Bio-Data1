@@ -1,0 +1,40 @@
+﻿@model Bio_Data.Models.Contactdetails
+
+@{
+    ViewData["Title"] = "ContactDetailsCreate";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" asp-action="ContactDetailsCreate" asp-controller="Biodata" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger text-center"></div>
+                        <div class="form-group text-left">
+                            <label asp-for="ContactNo">Contact No</label><label>*</label>
+                            <input type="text" asp-for="ContactNo" class="form-control" placeholder="Enter Contact No" />
+                            <span asp-validation-for="ContactNo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-left">
+                            <label asp-for="Address"></label><label>*</label>
+                            <textarea rows="3" asp-for="Address" placeholder="Enter Address" class="form-control"></textarea>
+                            @*<input type="text" asp-for="Address" class="form-control align-text-top" placeholder="Enter Address" />*@
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-left">
+                            <label asp-for="ImageFile">Profile Picture</label><label>*</label>
+                            <input type="file" class="form-control" asp-for="ImageFile" id="ChooseImg" />
+                            <span asp-validation-for="ImageFile" class="text-danger"></span>
+                        </div><br>
+                        <div>
+                            <input type="submit" name="Command" class="btn btn-sm btn-outline-success float-right" value="SUBMIT" />
+                            <a asp-action="FamilyDetailsCreate" asp-controller="Biodata" class="float-left" data-bs-toggle="collapse" data-bs-target="#collapseTwo" >Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

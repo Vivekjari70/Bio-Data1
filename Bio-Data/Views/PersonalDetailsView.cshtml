@@ -1,0 +1,22 @@
+﻿@model Bio_Data.Models.Personaldetails
+
+@{
+    Layout = null;
+}
+
+<h1>Personal Details</h1>
+
+<div>
+    <p>Name: @Model.Name</p>
+    <p>Date of Time: @Model.Dateoftime.ToString("yyyy-MM-dd")</p>
+    <p>Time of Birth: @Model.TimeOfBirth.ToString("hh:mm:ss tt")</p>
+    <p>Place of Birth: @Model.PlaceOfBirth</p>
+    <p>Rasi: @Model.Rasi</p>
+    <p>Nakshtra: @Model.Nakshtra</p>
+    <p>Complexion: @Model.Complexion</p>
+    <p>Height: @Model.Height</p>
+    <p>Education: @Model.Education</p>
+    <p>Cast: @Model.Cast</p>
+    <p>Job: @Model.Job</p>
+</div>
+
