@@ -1,10 +1,3 @@
-C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.AssemblyInfoInputs.cache
-C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.AssemblyInfo.cs
-C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.csproj.CoreCompileInputs.cache
-C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.RazorAssemblyInfo.cache
-C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.RazorAssemblyInfo.cs
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\bin\Debug\net5.0\appsettings.json
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\bin\Debug\net5.0\libwkhtmltox.dll
@@ -105,6 +98,14 @@ C:\Users\vivek\source\repos\Bio-Data\Bio-Data\bin\Debug\net5.0\zh-Hans\Microsoft
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.csproj.AssemblyReference.cache
+C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.AssemblyInfoInputs.cache
+C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.AssemblyInfo.cs
+C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.csproj.CoreCompileInputs.cache
+C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.RazorAssemblyInfo.cache
+C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.RazorAssemblyInfo.cs
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\scopedcss\bundle\Bio-Data.styles.css
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\staticwebassets\Bio-Data.StaticWebAssets.Manifest.cache
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.TagHelpers.input.cache
@@ -118,6 +119,7 @@ C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Razor\Views\Famil
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Razor\Views\PdfController1\borderimage.cshtml.g.cs
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Razor\Views\PersonalDetailsView.cshtml.g.cs
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Razor\Views\Shared\_ContactDetails.cshtml.g.cs
@@ -137,5 +139,5 @@ C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.dll
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\ref\Bio-Data.dll
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.pdb
 C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.genruntimeconfig.cache
-C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Bio-Data.csproj.AssemblyReference.cache
-C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Razor\Views\PdfController1\borderimage.cshtml.g.cs
+C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Razor\Views\Home\GetBiodata.cshtml.g.cs
+C:\Users\vivek\source\repos\Bio-Data\Bio-Data\obj\Debug\net5.0\Razor\Views\PdfController1\Edit.cshtml.g.cs

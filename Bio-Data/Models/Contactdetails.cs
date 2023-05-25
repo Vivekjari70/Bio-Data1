@@ -12,7 +12,7 @@ namespace Bio_Data.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required(ErrorMessage = " Contact No can't be blank.")]
+        [Required(ErrorMessage = "Contact No can't be blank.")]
         public int ContactNo { get; set; }
         [Required(ErrorMessage = " Address can't be blank.")]
         public string Address { get; set; }

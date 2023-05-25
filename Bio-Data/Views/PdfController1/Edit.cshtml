@@ -1,0 +1,274 @@
+﻿@model Bio_Data.Models.ViewModel.BiodataViewModel
+
+
+@{
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BioData</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Create</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GetBiodata">List</a>
+                    </li>
+                </ul>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="navbar float-right">
+                    <span>Welcome </span><span class="text-success p-2 font-weight-bold">@User.Identity.Name.ToUpper()</span><a class="btn btn-sm btn-danger font-weight-bold"
+                                                                                                                                asp-action="LogOut" asp-controller="Home">SignOut</a>
+                </div>
+            }
+
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form id="tab1" asp-action="Edit" asp-controller="PdfController1" method="post" enctype="multipart/form-data">
+                <div class="row text-left">
+                    <div class="col-6 ">
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label">Name</label><label>*</label>
+                            <input type="text" asp-for="Name" class="form-control" placeholder="Enter Name" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="Dateoftime" class="control-label">Date Of Birth</label><label>*</label>
+                            <input asp-for="Dateoftime" class="form-control" placeholder="Enter Date Of Birth" />
+                            <span asp-validation-for="Dateoftime" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="TimeOfBirth" class="control-label">Time Of Birth</label><label>*</label>
+                            <input asp-for="TimeOfBirth" class="form-control" placeholder="Enter Time-Of-Birth" />
+                            <span asp-validation-for="TimeOfBirth" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="PlaceOfBirth" class="control-label">Place Of Birth</label><label>*</label>
+                            <input type="text" asp-for="PlaceOfBirth" class="form-control" placeholder="Enter Place-Of-Birth" />
+                            <span asp-validation-for="PlaceOfBirth" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="Rasi" class="control-label">Rashi</label><label>*</label>
+                            <select type="text" asp-for="Rasi" class="form-control" asp-items="ViewBag.Rasi">
+                                <option value="">-- Select Rashi --</option>
+                                <option value="Mesh Rashi">Mesh Rashi</option>
+                                <option value="Vrishabh Rashi">Vrishabh Rashi</option>
+                                <option value="Mithun Rashi">Mithun Rashi</option>
+                            </select>
+                            <span asp-validation-for="Rasi" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="Nakshtra" class="control-label">Nakshtra</label><label>*</label>
+                            <input type="text" asp-for="Nakshtra" class="form-control" placeholder="Enter Nakshtra" />
+                            <span asp-validation-for="Nakshtra" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="Complexion" class="control-label">Complexion</label><label>*</label>
+                            <input type="text" asp-for="Complexion" class="form-control" placeholder="Enter Complexion" />
+                            <span asp-validation-for="Complexion" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="Height" class="control-label">Height</label><label>*</label>
+                            <input type="text" asp-for="Height" class="form-control" placeholder="Enter Height" />
+                            <span asp-validation-for="Height" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="Education" class="control-label">Education</label><label>*</label>
+                            <input type="text" asp-for="Education" class="form-control" placeholder="Enter Education" />
+                            <span asp-validation-for="Education" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="Cast" class="control-label">Cast</label><label>*</label>
+                            <input type="text" asp-for="Cast" class="form-control" placeholder="Enter Cast" />
+                            <span asp-validation-for="Cast" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-left">
+                    <label asp-for="Job" class="control-label">Job</label><label>*</label>
+                    <input type="text" asp-for="Job" class="form-control" placeholder="Enter Education" />
+                    <span asp-validation-for="Job" class="text-danger"></span>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="FatherName">Father Name</label><label>*</label>
+                            <input type="text" asp-for="FatherName" class="form-control" placeholder="Enter Father Name" />
+                            <span asp-validation-for="FatherName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="FatherOccupation">Father Occupation</label><label>*</label>
+                            <input type="text" asp-for="FatherOccupation" class="form-control" placeholder="Enter Father Occupation" />
+                            <span asp-validation-for="FatherOccupation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MotherName">Mother Name</label><label>*</label>
+                            <input type="text" asp-for="MotherName" class="form-control" placeholder="Enter Mother Name" />
+                            <span asp-validation-for="MotherName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="MotherOccupation">Mother Occupation</label><label>*</label>
+                            <input type="text" asp-for="MotherOccupation" class="form-control" placeholder="Enter Mother Occupation" />
+                            <span asp-validation-for="MotherOccupation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="ElderBrotherName">Elder Brother Name</label>
+                            <input type="text" asp-for="ElderBrotherName" class="form-control" placeholder="Enter Elder Brother Name" />
+                            <span asp-validation-for="ElderBrotherName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="ElderBrotherOccupation">Elder Brother Occupation</label>
+                            <input type="text" asp-for="ElderBrotherOccupation" class="form-control" placeholder="Enter Elder Brother Occupation" />
+                            <span asp-validation-for="ElderBrotherOccupation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="YoungerBrotherName">Younger Brother Name</label>
+                            <input type="text" asp-for="YoungerBrotherName" class="form-control" placeholder="Enter Younger Brother Name" />
+                            <span asp-validation-for="YoungerBrotherName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="YoungerBrotherOccupation">Younger Brother Occupation</label>
+                            <input type="text" asp-for="YoungerBrotherOccupation" class="form-control" placeholder="Enter Younger Brother Occupation" />
+                            <span asp-validation-for="YoungerBrotherOccupation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="ElderSisterName">Elder Sister Name</label>
+                            <input type="text" asp-for="ElderSisterName" class="form-control" placeholder="Enter Elder Sister Name" />
+                            <span asp-validation-for="ElderSisterName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="ElderSisterOccupation">Elder Sister Occupation</label>
+                            <input type="text" asp-for="ElderSisterOccupation" class="form-control" placeholder="Enter Elder Sister Occupation" />
+                            <span asp-validation-for="ElderSisterOccupation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="YoungerSisterName">Younger Sister Name</label>
+                            <input type="text" asp-for="YoungerSisterName" class="form-control" placeholder="Enter Younger Sister Name" />
+                            <span asp-validation-for="YoungerSisterName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="YoungerSisterOccupation">Younger Sister Occupation</label>
+                            <input type="text" asp-for="YoungerSisterOccupation" class="form-control" placeholder="Enter Younger Sister Occupation" />
+                            <span asp-validation-for="YoungerSisterOccupation" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-left">
+                    <label asp-for="ContactNo">Contact No</label><label>*</label>
+                    <input type="text" asp-for="ContactNo" class="form-control" autocomplete="off" placeholder="Enter Contact No" />
+                    <span asp-validation-for="ContactNo" class="text-danger"></span>
+                </div>
+                <div class="form-group text-left">
+                    <label asp-for="Address"></label><label>*</label>
+                    <textarea rows="3" asp-for="Address" placeholder="Enter Address" class="form-control"></textarea>
+                    @*<input type="text" asp-for="Address" class="form-control align-text-top" placeholder="Enter Address" />*@
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div id="profilePictureContainer" class="form-group text-left">
+                    <label asp-for="ImageFile">Profile Picture</label><label>*</label>
+                    <input type="file" class="form-control" asp-for="ImageFile" id="ChooseImg" name="ImageFile" />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                </div>
+                <div>
+                    <img src="~/Content/Image/@Model.Path" id="imagePreview" alt="Preview" width="100" height="100" style="border: 1px solid red" /><br />
+                    <input type="button" value="Edit" class="btn btn-dark" id="editButton" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Next" id="myButton" name="Command" class="btn btn-lg btn-outline-success float-right" onclick="location.href='@Url.Action("Edit", "PdfController1")'" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            debugger
+            // Hide the "Profile Picture" form group initially
+            $("#profilePictureContainer").hide();
+
+            // Add click event handler to the "Edit" button
+            $("#editButton").click(function () {
+                // Toggle the visibility of the "Profile Picture" form group
+                $("#profilePictureContainer").toggle();
+            });
+        });
+
+    </script>
+    <script src="~/lib/jquery/dist/jquery.min.js" integrity="sha384-HmZmU2c4GKScyGR/UaL/BG5LUX1+QCDlVSCHd+0dbWydZTI4AnQwFLAQaP8CKgS2" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-HmZmU2c4GKScyGR/UaL/BG5LUX1+QCDlVSCHd+0dbWydZTI4AnQwFLAQaP8CKgS2" crossorigin="anonymous"></script>
+}

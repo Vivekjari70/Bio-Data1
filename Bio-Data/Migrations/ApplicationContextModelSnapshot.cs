@@ -69,19 +69,15 @@ namespace Bio_Data.Migrations
                         .UseIdentityByDefaultColumn();
 
                     b.Property<string>("ElderBrotherName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("ElderBrotherOccupation")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("ElderSisterName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("ElderSisterOccupation")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("FatherName")
@@ -101,19 +97,15 @@ namespace Bio_Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("YoungerBrotherName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("YoungerBrotherOccupation")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("YoungerSisterName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("YoungerSisterOccupation")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");

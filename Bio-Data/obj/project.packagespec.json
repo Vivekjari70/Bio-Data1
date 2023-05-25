@@ -60,6 +60,18 @@
         "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
           "target": "Package",
           "version": "[1.1.0, )"
+        },
+        "Popper.js": {
+          "target": "Package",
+          "version": "[1.16.1, )"
+        },
+        "bootstrap": {
+          "target": "Package",
+          "version": "[5.2.3, )"
+        },
+        "jQuery": {
+          "target": "Package",
+          "version": "[3.6.4, )"
         }
       },
       "imports": [

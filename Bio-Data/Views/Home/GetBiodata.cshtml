@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Bio_Data.Models.ViewModel.BiodataViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BioData</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Create</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GetBiodata">List</a>
+                    </li>
+                </ul>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="navbar float-right">
+                    <span>Welcome </span><span class="text-success p-2 font-weight-bold">@User.Identity.Name.ToUpper()</span><a class="btn btn-sm btn-danger font-weight-bold"
+                                                                                                                                asp-action="LogOut" asp-controller="Home">SignOut</a>
+                </div>
+            }
+
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="table-responsive-sm">
+        <div class="table-container">
+            <!-- Added container for table -->
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>DOT</th>
+                        <th>TOB</th>
+                        <th>POB</th>
+                        <th>Rasi</th>
+                        <th>Nakshtra</th>
+                        <th>Complexion</th>
+                        <th>Height</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Dateoftime.ToShortDateString()</td>
+                            <td>@item.TimeOfBirth.ToShortTimeString()</td>
+                            <td>@item.PlaceOfBirth</td>
+                            <td>@item.Rasi</td>
+                            <td>@item.Nakshtra</td>
+                            <td>@item.Complexion</td>
+                            <td>@item.Height</td>
+                            <td>
+                                <a href="@Url.Action("Edit", "PdfController1", new { id = item.Id })" class="btn btn-primary">Edit</a>
+                                <a href="@Url.Action("DeleteBiodata", "PdfController1", new { id = item.Id })" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?')">Delete</a>
+                                <a href="@Url.Action("CreatePDF1", "PdfController1", new { id = item.Id })" class="btn btn-success">Download</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.delete-btn').on('click', function (e) {
+            e.preventDefault(); // Prevent the default behavior of the link
+
+            var deleteUrl = $(this).attr('href'); // Get the delete URL from the link
+
+            // Show the confirmation modal
+            if (confirm("Are you sure you want to delete this item?")) {
+                window.location.href = deleteUrl; // Proceed with the delete action
+            }
+        });
+    });
+
+   
+</script>

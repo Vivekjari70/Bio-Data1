@@ -31,7 +31,10 @@ namespace Bio_Data.Controllers
         {
             return View();
         }
-
+        public IActionResult Privacy()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -63,7 +66,6 @@ namespace Bio_Data.Controllers
                     }
                     else
                     {
-                        
                         TempData["errorpassword"] = "Invalid password! ";
                         return View(model);
                     }
@@ -100,7 +102,7 @@ namespace Bio_Data.Controllers
             {
                 Response.Cookies.Delete(cookies);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Home");
         }
 
         [AcceptVerbs("Post", "Get")]
@@ -117,6 +119,48 @@ namespace Bio_Data.Controllers
             }
         }
 
-        
+        public IActionResult GetBiodata()
+        {
+            var query = from p in context.personaldetails
+                        join fm in context.familydetails on p.Id equals fm.Id into fmJoin
+                        from fm in fmJoin.DefaultIfEmpty()
+                        join c in context.contactdetails on p.Id equals c.Id into cJoin
+                        from c in cJoin.DefaultIfEmpty()
+                        select new BiodataViewModel
+                        {
+                            Id = p.Id,
+                            Name = p.Name,
+                            Dateoftime = p.Dateoftime,
+                            TimeOfBirth = p.TimeOfBirth,
+                            PlaceOfBirth = p.PlaceOfBirth,
+                            Rasi = p.Rasi,
+                            Nakshtra = p.Nakshtra,
+                            Complexion = p.Complexion,
+                            Height = p.Height,
+                           // Education = p.Education,
+                           // Cast = p.Cast,
+                           // Job = p.Job,
+                           // FatherName = fm != null ? fm.FatherName : null,
+                           // FatherOccupation = fm != null ? fm.FatherOccupation : null,
+                           // MotherName = fm != null ? fm.MotherName : null,
+                           // MotherOccupation = fm != null ? fm.MotherOccupation : null,
+                           // ElderBrotherName = fm != null ? fm.ElderBrotherName : null,
+                           // ElderBrotherOccupation = fm != null ? fm.ElderBrotherOccupation : null,
+                           // YoungerBrotherName = fm != null ? fm.YoungerBrotherName : null,
+                           // YoungerBrotherOccupation = fm != null ? fm.YoungerBrotherOccupation : null,
+                           // ElderSisterName = fm != null ? fm.ElderSisterName : null,
+                           // ElderSisterOccupation = fm != null ? fm.ElderSisterOccupation : null,
+                           // YoungerSisterName = fm != null ? fm.YoungerSisterName : null,
+                           // YoungerSisterOccupation = fm != null ? fm.YoungerSisterOccupation : null,
+                           // ContactNo = c != null ? c.ContactNo : null,
+                           // Address = c != null ? c.Address : null,
+                           //// Path = p.Path
+                        };
+
+            var result = query.ToList();
+            return View(result);
+        }
+
+       
     }
 }
